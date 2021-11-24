@@ -1,5 +1,5 @@
 .pytest_cache
-driver
+/driver
 chromedriver
 __pycache__
 .vscode
