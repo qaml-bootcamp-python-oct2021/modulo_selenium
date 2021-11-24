@@ -1,0 +1,6 @@
+.pytest_cache
+driver
+chromedriver
+__pycache__
+.vscode
+README.md
