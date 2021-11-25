@@ -1,0 +1,48 @@
+#Buscar en el nodo H5 el texto q coincida con "Elements"
+$x('//h5[text()= "Elemnts"]')
+
+#Reforzar la busqueda usando un padre como referencia
+$x('//div[@class="category-cards"]//h5[text()= "Elements"]')
+
+$x('//div[@class=" mr-sm-2 form-control"]//input()="Full Name"]')
+
+$x //div[@input='userName']
+
+$x('//div[text()= "main-header"]')
+
+#Capturar titulo Xpath
+$x('//div[text() = "Text Box"]')
+
+#Encontrar elemento por ID
+document.getElementById('userEmail')
+
+#Capturar CSS
+$$('.main-header')
+
+#Encuentra todos los campos input
+$$('.col-md-9.col-sm-12')
+
+#Encuentra campo email
+$x ('//input[@id='userEmail']
+
+#Ecnuentra campo Address
+$x ("//input[@id='currentAddress']")
+
+
+
+
+
+#Pagina laboratorio Qaminds
+#Detectar img
+$x ("//img[@alt = 'Your Store']")
+#Busqueda mas robusta ante cambios
+$x ("//div[@id='logo']//img")
+
+#Encontrar boton busqueda
+$x ("//button[@class='btn btn-default btn-lg']")
+
+$x ("//div[@id='search']//button")
+
+#Encontrar campo busqueda
+$x ("//div[@id='search']//input")
+$x ("//div[@id='search']//input")
