@@ -4,7 +4,6 @@ import pytest
 
 driver = None
 
-
 def setup():
     global driver
     browser = 'chrome'
