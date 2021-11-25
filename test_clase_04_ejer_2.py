@@ -19,7 +19,7 @@ def test_search():
     url = 'https://laboratorio.qaminds.com/'
     driver.get(url) 
     driver.maximize_window()
-
+##Cambio
     tablet_element : WebElement = driver.find_element(By.XPATH, '//ul//a[text() = "Tablets"]')
     assert tablet_element.is_displayed(),'No se encuentra el elemento'
     tablet_element.click()
