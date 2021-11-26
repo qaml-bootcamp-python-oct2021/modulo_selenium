@@ -39,6 +39,10 @@ def test_search():
     continue_button.click()
     time.sleep (2)
 
+    landing_page : WebElement = driver.find_element(By.XPATH, '//div[@id="slideshow0"]')
+    assert landing_page.is_displayed(), 'No estas en Home Page'
+    time.sleep(2)
+
 
 def teardown():
     driver.quit()
