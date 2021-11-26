@@ -3,3 +3,6 @@ Este repositorio pertenece al modulo de Python y Selenium del bootcamp de Noviem
 
 ## Clase 04 : 23-11-2021
 > - Selenium WebElements
+
+## Clase 05 : 25-11-2021
+> - Selenium WebElements
