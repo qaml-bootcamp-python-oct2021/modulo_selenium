@@ -15,7 +15,7 @@ def setup():
     driver = selenium_driver.get_driver(browser)
     return driver
 
-def test_tablet_search():
+def test_tablet_search()):
     url = 'https://laboratorio.qaminds.com/'
     #Si encuentra el elemento se ejecuta de inmediato, sino se espera 5 segundos.
     driver.implicitly_wait(5)
