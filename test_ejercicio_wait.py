@@ -28,7 +28,7 @@ def test_tablet_search():
     search_button : WebElement = driver.find_element(By.XPATH, '//div[@id="search"]//button')
     assert search_button.is_displayed() , 'No se encuentra el boton de busqueda'
     search_button.click()
-    image_iphone : WebElement = driver.find_element(By.XPATH, '//a[text()="iPhone"]')
+    image_iphone : WebElement = driver.find_element(By.XPATH, '//a[text()="Samsung"]')
     assert image_iphone.is_displayed() , 'El nombre es incorrecto'
 
 def teardown():
