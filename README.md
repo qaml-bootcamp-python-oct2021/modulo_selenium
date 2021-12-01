@@ -9,3 +9,6 @@ Este repositorio pertenece al modulo de Python y Selenium del bootcamp de Noviem
 
 ## Clase 06 : 11-27-2021
 > - Waits
+
+## Clase 07 : 30-11-2021
+> - Factory Driver
