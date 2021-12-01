@@ -27,11 +27,6 @@ def test_start_download():
     button_download = driver_w.until(ec.element_to_be_clickable(button_download))
     button_download.click()
 
-    tittle_download : WebElement = driver.find_element(By.ID, 'ui-id-1')
-    buton_cancel : WebElement = driver.find_element(By.XPATH, '//button[text()="Cancel Download"]')
-    assert tittle_download.is_displayed(), 'No se encuentra el titulo File Download'
-    assert buton_cancel.is_displayed(), 'No se encuentra el boton Cancel Download'
-
     completed_message = (By.XPATH, '//div[@id= "dialog"]/div[text()="Complete!"]')
     driver_w : WebDriverWait = WebDriverWait(driver, 10)
     driver_w.until(ec.visibility_of_element_located(completed_message))
