@@ -1,0 +1,18 @@
+{
+    "browser_name" : "firefox",
+    "path" : "./drivers/geckodriver.exe",
+    "url_app" : "https://laboratorio.qaminds.com/",
+    "incognito" : true, 
+    "headless" :{
+        "enabled" : false,
+        "resolution" : {
+            "width" : 1900,
+            "height" : 1080
+        }
+    },
+    "page_load" : 10,
+    "implicit_wait:" : {
+        "enabled" : true,
+        "time" : 2
+    }
+}

@@ -26,7 +26,7 @@ def test_download():
     down_button.click()
 
     percentage_message = (By.XPATH, '//div[contains(@class,"circle end complate")]//div[text()="100%"]')
-    driver_w : WebDriverWait = WebDriverWait (driver, 10)
+    driver_w : WebDriverWait = WebDriverWait (driver, 40)
     driver_w.until(ec.visibility_of_element_located(percentage_message))
     
 
