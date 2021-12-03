@@ -12,3 +12,7 @@ Este repositorio pertenece al modulo de Python y Selenium del bootcamp de Noviem
 
 ## Clase 07 : 30-11-2021
 > - Factory Driver
+
+## Clase 08 : 02-12-2021
+> - WebDriver Options
+> - Parametrizacion Web Driver
