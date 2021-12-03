@@ -13,21 +13,21 @@ implicit_wait_time = 0
 url_app = None
 
 def load_config():
-    global browser_name, driver_path, incognito, headless_mode, headless_resolution, page_load, implicit_wait_mode, implicit_wait_time, url_app
+    global browser_name, driver_path, incognito, headless_mode, headless_resolution, page_load, implicit_wait_mode, implicit_wait_time,url_app
     try:
-        with open (CONFIG_FILE, 'r') as file:
+        with open(CONFIG_FILE,'r') as file:
             data = json.load(file)
             browser_name = data['browser_name']
-            driver_path = data ['driver_path']
-            incognito = data ['incognito']
-            headless_mode = data ['headless']['enabled']
-            headless_resolution = data ['headless']['resolution']
-            page_load = data ['page_load']
-            implicit_wait_mode = data ['implicit_wait']['enabled']
-            implicit_wait_time = data ['implicit_wait']['time']
-            url_app = data ['url_app']
+            driver_path = data['driver_path']
+            incognito = data['incognito']
+            headless_mode = data['headless']['enabled']
+            headless_resolution = data['headless']['resolution']
+            page_load = data['page_load']
+            implicit_wait_mode = data['implicit_wait']['enabled']
+            implicit_wait_time = data['implicit_wait']['time']
+            url_app = data['url_app']
     except Exception as e:
-        raise KeyError (f'Error en la obtencion de parametros: {e}')
+        raise KeyError(f'Error en la obtencion de parametros: {e}')
 
 def get_browser_name():
     return browser_name

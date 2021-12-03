@@ -13,7 +13,6 @@ driver : WebDriver = None
 def setup():
     global driver
     driver = factory_driver.get_driver()
-    return driver
 
 def test_search():
 

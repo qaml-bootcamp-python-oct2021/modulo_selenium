@@ -1,6 +1,6 @@
 import chrome_driver , firefox_driver, config_handler
 
-def get_driver ():
+def get_driver():
     config_handler.load_config()
     browser = config_handler.get_browser_name()
     if browser == 'chrome':
@@ -8,16 +8,16 @@ def get_driver ():
     elif browser == 'firefox':
         driver = firefox_driver.create_driver()
     else:
-        raise RuntimeError("No existe el driver del navegador indicado")
+        raise RuntimeError('No existe el driver del navegador indicado')
 
     if config_handler.get_headless_mode():
-        driver.set_window_size(config_handler.get_headless_resolution()['width'], config_handler.get_headless_resolution()['height'])
-    else:   
-        driver.maximize_window()    
-
+        driver.set_window_size(config_handler.get_headless_resolution()['width'],config_handler.get_headless_resolution()['height'])
+    else:
+        driver.maximize_window()
+    
     if config_handler.get_implicit_wait_mode():
         driver.implicitly_wait(config_handler.get_implicit_wait_time())
-    
+
     driver.set_page_load_timeout(config_handler.get_page_load())
 
     driver.get(config_handler.get_url_app())

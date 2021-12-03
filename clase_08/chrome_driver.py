@@ -1,4 +1,4 @@
-from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver import Chrome , ChromeOptions
 import config_handler
 
 INCOGNITO = 'incognito'
