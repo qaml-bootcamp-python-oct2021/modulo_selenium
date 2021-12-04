@@ -60,17 +60,29 @@ def test_verifica_carrito():
 @pytest.mark.test3
 def test_currency():
     producto = 'Samsung'
-    currency_logo : WebElement = driver.find_element(By.XPATH, '//button[@class="btn btn-link dropdown-toggle" and contains(text(),"$ Currency")]')
-    print(currency_logo.text)
-    assert currency_logo.is_displayed() and currency_logo.text == "$ Currency" , "No se encuentra le simbolo $ en currency"
+    currency_logo : WebElement = driver.find_element(By.XPATH, '//button[@class="btn btn-link dropdown-toggle"]')
+    assert currency_logo.is_displayed() and currency_logo.text == "$ Currency " , "No se encuentra le simbolo $ en currency"
     barra_search : WebElement = driver.find_element(By.XPATH, '//div[@id="search"]//input')
     assert barra_search.is_displayed() , "No se encuentra la barra de busqueda"
     barra_search.send_keys(producto)
     boton_search : WebElement = driver.find_element(By.XPATH, '//div[@id="search"]//button')
     assert boton_search.is_displayed() , "No se encuentra el boton de busqueda"
     boton_search.click()
-
-
+    samsung_product : WebElement = driver.find_element(By.XPATH, '//img[@title="Samsung SyncMaster 941BW"]')
+    assert samsung_product.is_displayed() , 'No se encuentra el producto'
+    samsung_product.click()
+    dollar_price : WebElement = driver.find_element(By.XPATH,'//li[contains(h2,"$242.00")]')
+    assert dollar_price.is_displayed(), 'No se encuentra el precio del producto'
+    dollar = str(dollar_price.text).replace("$","")
+    currency_button : WebElement = driver.find_element(By.XPATH, '//button[@class="btn btn-link dropdown-toggle"]')
+    currency_button.click()
+    button_eur : WebElement = driver.find_element(By.XPATH,'//button[@name="EUR"]')
+    assert button_eur.is_displayed(), 'No se encuentra el boton Euro'
+    button_eur.click()
+    euro_price : WebElement = driver.find_element(By.XPATH,'//li[contains(h2,"189.87€")]')
+    assert euro_price.is_displayed(), 'No se encuentra el precio del producto en Euros'
+    euro = str(euro_price.text).replace("€","")
+    assert float(dollar) > float(euro), 'El precio del item en dolares no es mas grande que en euros'
 
 def teardown():
     driver.quit()
