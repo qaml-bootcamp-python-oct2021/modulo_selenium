@@ -1,0 +1,24 @@
+{
+    "browser": "chrome",
+    "driver" : "./drivers/chromedriver.exe",
+    "url":"https://laboratorio.qaminds.com/",
+    "incognite_mode": true,
+    "headless":{
+        "enabled":false,
+        "resolution": {
+            "width":1920,
+            "height":1080
+        }
+    },
+    "page_load": 15,
+    "implicit_wait": {
+        "enabled" :false,
+        "time" :2
+    },
+    "explicit_wait" :{
+        "small": 5,
+        "medium" :10,
+        "large" : 45
+    }
+    
+}
