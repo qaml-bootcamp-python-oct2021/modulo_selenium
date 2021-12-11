@@ -24,8 +24,10 @@ def test_start_download():
     button_cancel : WebElement = driver.find_element(By.XPATH,'//button[text() = "Cancel Download"]')
     assert title_download.is_displayed() , 'No se encuentra el titulo File Download'
     assert button_cancel.is_displayed() , 'No se encuentra el boton Cancel Download'
+    driver.save_screenshot('./start_download.png')
     completed_message = (By.XPATH,'//div[@id="dialog"]/div[text()="Complete!"]')
     verify_element_visible(completed_message,10,'Complete Message')
+    driver.save_screenshot('./complete_message.png')
     close_button_locator = (By.XPATH,'//button[text() = "Close"]')
     button_close : WebElement = verify_element_visible(close_button_locator,10,'Boton Close')
     button_close.click()
@@ -36,6 +38,7 @@ def verify_element_visible(locator,timeout,locator_message):
         element = driver_w.until(ec.visibility_of_element_located(locator))
         return element
     except TimeoutException as e:
+        driver.save_screenshot('./error.png')
         assert False , f'No fue posible encontrar el elemento {locator_message} en {timeout} segundos'
 
 

@@ -22,7 +22,7 @@ def test_iphone_search():
     button_search.click()
     imagen_iphone : WebElement = driver.find_element(By.XPATH,f'//img[@title="{producto}"]')
     assert imagen_iphone.is_displayed() ,'No se encontro imagen del producto'
-
+    driver.save_screenshot('./iphone_search.png')
 
 def teardown():
     driver.quit()

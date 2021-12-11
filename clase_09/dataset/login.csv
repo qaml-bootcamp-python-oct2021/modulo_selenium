@@ -1,0 +1,3 @@
+valid_username,valid_pass,exitoso
+invalid_username,pass,no_exitoso
+valid_username,invalid_pass,no_exitoso

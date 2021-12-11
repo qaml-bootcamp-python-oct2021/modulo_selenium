@@ -3,3 +3,5 @@
 assets
 *.pytest*
 *reporte*
+*.html
+.vscode
