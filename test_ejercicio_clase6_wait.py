@@ -27,6 +27,8 @@ def test_start_download():
     button_download = driver_w.until(ec.element_to_be_clickable(button_download))
     button_download.click()
 
+    driver.find_element(By.CSS_SELECTOR)
+
     completed_message = (By.XPATH, '//div[@id= "dialog"]/div[text()="Complete!"]')
     driver_w : WebDriverWait = WebDriverWait(driver, 10)
     driver_w.until(ec.visibility_of_element_located(completed_message))
