@@ -1,7 +1,9 @@
 
 from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 import datetime
 class BasePage:
     _driver: WebDriver
@@ -14,16 +16,23 @@ class BasePage:
     def take_screenshot(self, filename=f'{datetime.datetime.today().strftime("%Y%m%d")}'):
         self._driver.save_screenshot(f'{filename}.png')
     
-    def _get_element(self, locator)-> WebElement:
-        assert self._exist_element(locator), 'El elemento no existe'
-        return self._driver.find_element(locator[0], locator[1])
-      
-
-    def _exist_element(self,locator):
+    def get_element(self, locator)-> WebElement:
         try:
-            return self._driver.find_element(locator[0], locator[1]) != None
+            return self._driver.find_element(locator[0], locator[1]) 
         except NoSuchElementException:
-            False
+            return None
+    
 
-    def is_display(self, locator):
-          assert self._get_element(locator).is_displayed(), 'No esta visible el elemento'
+    def is_displayed(self, locator):
+         return  self.get_element(locator) != None
+
+    def verify_element_visible(self, locator,timeout, description):
+        wait_driver= WebDriverWait(self._driver, timeout)
+        isVisible = False
+        try:
+            wait_driver.until(ec.visibility_of_element_located(locator))
+            isVisible = True
+        except TimeoutException:
+            self.take_screenshot()
+        assert isVisible, f'No fue posible identificar a {description} en {timeout} segundos'
+
