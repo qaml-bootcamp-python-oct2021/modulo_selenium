@@ -28,7 +28,7 @@ def test_search():
     my_account.click()
     time.sleep(1)
     
-    login_click : WebElement = driver.find_element(By.XPATH, '//li//a[text() = "Login"]' )
+    login_click : WebElement = driver.find_element(By.XPATH, '//li//a[text() = "Login"]')
     assert login_click.is_displayed(), 'No se encuentra el elemento'
     login_click.click()
 
