@@ -26,7 +26,7 @@ def test_select_option():
     option_list = Select(select)
     option_list.select_by_visible_text(option)
     time.sleep(3)
-
+    
 @pytest.mark.ejercicio05
 def test_select_value():
     option = 'A root option'

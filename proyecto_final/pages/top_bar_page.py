@@ -1,0 +1,33 @@
+from proyecto_final.pages.base_page import BasePage
+from selenium.webdriver.common.by import By
+
+class TopBar(BasePage):
+
+    
+    def __init__(self, driver) -> None:
+        super().__init__(driver)
+
+    def _get_menu_option(self,option):
+        locator = f'//div[@id="top-links"]//a[@title="{option}"]'
+        menu_option = (By.XPATH, locator)
+        return menu_option
+
+    def verify_menu_option(self,option):
+        assert self.is_displayed(self._get_menu_option(option)) , f'No en encuentra la opcion {option} en el menu'
+
+    def select_option(self,option):
+        self.verify_menu_option(option)
+        self.get_element(self._get_menu_option(option)).click()
+    
+    def _get_my_account_option(self,option):
+        locator = f'//a[text()="{option}"]'
+        menu_option = (By.XPATH,locator)
+        return menu_option
+    
+    def verify_my_account_option(self,option):
+        assert self.is_displayed(self._get_my_account_option(option)) , f'No en encuentra la opcion {option} en el menu'
+
+    def select_my_account_option(self,option):
+        self.verify_my_account_option(option)
+        self.get_element(self._get_my_account_option(option)).click()
+    
