@@ -1,0 +1,37 @@
+{
+    "browser": "chrome",
+    "url":"https://laboratorio.qaminds.com/",
+    "chrome":{
+        "driver": "./drivers/chromedriver.exe"
+    },
+    "firefox":{
+        "driver": "./drivers/geckodriver.exe",
+        "option_location":"C:/Program Files/Mozilla Firefox/firefox.exe"
+    },
+    "incognite_mode": true,
+    "headless":{
+        "enabled":false,
+        "resolution": {
+            "width":1920,
+            "height":1080
+        }
+    },
+    "page_load": 15,
+    "implicit_wait": {
+        "enabled" :false,
+        "time" :2
+    },
+    "explicit_wait" :{
+        "small": 5,
+        "medium" :10,
+        "large" : 45
+    },
+    "evidence" : {
+        "path":"./proyecto_final/evidence"
+    },
+    "data_set" : {
+        "path":"./proyecto_final/data"
+    }
+   
+    
+}
