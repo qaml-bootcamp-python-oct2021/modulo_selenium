@@ -1,5 +1,3 @@
-from typing import ItemsView
-from selenium import webdriver
 from selenium.webdriver.common import by
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
