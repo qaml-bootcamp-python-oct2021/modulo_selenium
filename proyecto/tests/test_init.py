@@ -1,8 +1,6 @@
 from proyecto.drivers import factory_driver
 from proyecto.pages.home_page import HomePage
-from proyecto.utils import data_handler
-import time
-import pytest
+
 
 driver = None
 

@@ -4,6 +4,10 @@ from selenium.webdriver.common.by import By
 
 class LoginPage(BasePage):
 
+    global address, password
+    address = 'record'
+    password = 'breaker'
+    
     _my_account_button = (By.XPATH, '//span[@class="caret"]')
     _my_account_login = (By.XPATH, '//li//a[text() = "Login"]')
     _email_address_input = (By.XPATH, '//input[@id="input-email"]')
@@ -19,12 +23,12 @@ class LoginPage(BasePage):
  
     def address_input (self):    
         self.verify_element_visible(self._email_address_input), 'No se encontro el campo email address'
-        self.get_element(self._email_address_input).send_keys('test')
+        self.get_element(self._email_address_input).send_keys(address)
         
     def pass_input (self):    
         self.verify_element_visible(self._password_input), 'No se encontro el campo password'
-        self.get_element(self._password_input).send_keys('test')
-    
+        self.get_element(self._password_input).send_keys(password)
+
     def login_button (self):
         self.verify_element_visible(self._login_button_myaccount), 'No se encontro el boton'
         self.get_element(self._login_button_myaccount).click()

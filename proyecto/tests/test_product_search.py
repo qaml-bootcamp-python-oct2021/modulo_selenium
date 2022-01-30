@@ -1,6 +1,5 @@
 from proyecto.drivers import factory_driver
 from proyecto.pages.home_page import HomePage
-from proyecto.pages.search_page import SearchPage
 from proyecto.utils import data_handler
 import time
 import pytest
@@ -15,7 +14,6 @@ def setup():
 def test_buscar_prod(producto):
     home_page= HomePage(driver)
     home_page.buscar_producto(producto)
-    search_page = SearchPage(driver)
     home_page.take_screenshot()
     time.sleep(2)
 
