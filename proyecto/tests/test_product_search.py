@@ -15,8 +15,7 @@ def test_buscar_prod(producto):
     home_page= HomePage(driver)
     home_page.buscar_producto(producto)
     home_page.take_screenshot()
-    time.sleep(2)
-
+    
 def teardown():
     home_page = HomePage(driver)
     home_page.close_browser()

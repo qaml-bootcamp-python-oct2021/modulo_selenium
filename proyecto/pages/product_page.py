@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 class ProductPage (BasePage):
     
     _laptop_netbook_bar = (By.XPATH,'//li//a[text() = "Laptops & Notebooks"]')
-    _sub_menu_windows = (By.XPATH, '//li//a[text() = "Windows (0)"]')
+    _sub_menu_windows = (By.XPATH, '//a[contains(text(),"Windows")]')
     _mensaje_error_cat_vacia = (By.XPATH, '//div//p[text() = "There are no products to list in this category."]')
 
     def category_bar(self):
