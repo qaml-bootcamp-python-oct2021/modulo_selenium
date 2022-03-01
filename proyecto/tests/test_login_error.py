@@ -16,6 +16,11 @@ def test_my_account():
     login_page.login_button()
     login_page.login_error_message()
     login_page.take_screenshot()
+
+def test_forgot_passLink():
+    link_forgot = LoginPage (driver)
+    link_forgot.my_account_login()
+    link_forgot.forgot_pass_link()
     
 def teardown():
     home_page = HomePage(driver)

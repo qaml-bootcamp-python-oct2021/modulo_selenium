@@ -13,6 +13,7 @@ class LoginPage(BasePage):
     _email_address_input = (By.XPATH, '//input[@id="input-email"]')
     _password_input = (By.XPATH, '//input[@id="input-password"]')
     _login_button_myaccount = (By.XPATH, '//input[@value="Login"]')
+    _forgot_pass_button = (By.XPATH, '//form//div//a[contains(text(),"Forgotten Password")]')
     _login_error_message = (By.XPATH, '//div[text()= " Warning: No match for E-Mail Address and/or Password."]')
 
     def my_account_login (self):
@@ -36,3 +37,7 @@ class LoginPage(BasePage):
     def login_error_message(self):
         self.verify_element_visible(self._login_error_message), 'El mensaje de error no es correcto'
         self.get_element(self._login_error_message)
+
+    def forgot_pass_link (self):
+        self.verify_element_visible(self._forgot_pass_button), 'No se encuentra el link'
+        self.get_element(self._forgot_pass_button)
