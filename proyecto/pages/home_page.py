@@ -1,3 +1,4 @@
+from webbrowser import get
 from proyecto.pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
@@ -7,6 +8,7 @@ class HomePage(BasePage):
     _new_image = (By.ID, 'image')
     _input_search = (By.XPATH,'//div[@id="search"]//input')
     _button_search = (By.XPATH,'//div[@id="search"]//button')
+    _change_currency = (By.XPATH, '//button//span[contains(text(),"Currency")]')
     
     def __init__(self, driver) -> None:
         super().__init__(driver)
@@ -29,6 +31,9 @@ class HomePage(BasePage):
         self.get_element(self._input_search).send_keys(producto)
         self.verify_button_search()
         self.get_element(self._button_search).click()
+
+
+        
 
     
     

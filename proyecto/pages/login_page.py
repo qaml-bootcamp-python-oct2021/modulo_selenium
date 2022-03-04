@@ -15,6 +15,7 @@ class LoginPage(BasePage):
     _login_button_myaccount = (By.XPATH, '//input[@value="Login"]')
     _forgot_pass_button = (By.XPATH, '//form//div//a[contains(text(),"Forgotten Password")]')
     _login_error_message = (By.XPATH, '//div[text()= " Warning: No match for E-Mail Address and/or Password."]')
+    _welcome_message = (By.XPATH, '//div//h2[text() = "Returning Customer"]')
 
     def my_account_login (self):
         self.verify_element_visible(self._my_account_button), 'No se encontro el elemento'
@@ -41,3 +42,8 @@ class LoginPage(BasePage):
     def forgot_pass_link (self):
         self.verify_element_visible(self._forgot_pass_button), 'No se encuentra el link'
         self.get_element(self._forgot_pass_button)
+
+    def welcome_message (self):
+        self.verify_element_visible(self._welcome_message), 'El mensaje es incorrecto'
+        self.get_element(self._welcome_message)
+    

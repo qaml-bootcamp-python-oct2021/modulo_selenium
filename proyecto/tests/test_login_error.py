@@ -21,6 +21,13 @@ def test_forgot_passLink():
     link_forgot = LoginPage (driver)
     link_forgot.my_account_login()
     link_forgot.forgot_pass_link()
+    link_forgot.take_screenshot()
+
+def test_welcome_message():
+    message = LoginPage(driver)
+    message.my_account_login()
+    message.welcome_message()
+    message.take_screenshot()
     
 def teardown():
     home_page = HomePage(driver)
