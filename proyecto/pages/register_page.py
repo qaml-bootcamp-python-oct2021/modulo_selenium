@@ -5,11 +5,11 @@ from selenium.webdriver.common.by import By
 class RegisterPage(BasePage):
 
     global name, lastname, email, telephone, pass1
-    name = 'James'
-    lastname = 'Harrison'
-    email = 'jhm@outlook.com'
-    telephone = '5589099817'
-    pass1 = 'test'
+    name = 'Tood'
+    lastname = 'Hrrison'
+    email = 'jhmss@outlook.com'
+    telephone = '5586799817'
+    pass1 = 'tes22'
 
 
     _my_account_button = (By.XPATH, '//span[@class="caret"]')
